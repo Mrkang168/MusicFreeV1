@@ -20,6 +20,11 @@ import PluginSheetDetail from '@/pages/pluginSheetDetail';
 import History from '@/pages/history';
 import SetCustomTheme from '@/pages/setCustomTheme';
 import Permissions from '@/pages/permissions';
+import VoiceMindHome from '../pages/voicemind/VoiceMindHome';
+import RecordingsScreen from '../pages/voicemind/RecordingsScreen';
+import AIChatScreen from '../pages/voicemind/AIChatScreen';
+import PersonsScreen from '../pages/voicemind/PersonsScreen';
+import SettingsScreen from '../pages/voicemind/SettingsScreen';
 
 LogBox.ignoreLogs([
     'Non-serializable values were found in the navigation state',
@@ -65,6 +70,16 @@ export const ROUTE_PATH = {
     SET_CUSTOM_THEME: 'set-custom-theme',
     /** 权限管理 */
     PERMISSIONS: 'permissions',
+    /** VoiceMind 首页 */
+    VOICEMIND_HOME: 'voicemind-home',
+    /** 录音记录 */
+    RECORDINGS: 'recordings',
+    /** AI 对话 */
+    AI_CHAT: 'ai-chat',
+    /** 人物管理 */
+    PERSONS: 'persons',
+    /** 设置 */
+    VOICEMIND_SETTINGS: 'settings',
 } as const;
 
 type Valueof<T> = T[keyof T];
@@ -151,6 +166,26 @@ export const routes: Array<IRoutes> = [
     {
         path: ROUTE_PATH.PERMISSIONS,
         component: Permissions,
+    },
+    {
+        path: ROUTE_PATH.VOICEMIND_HOME,
+        component: VoiceMindHome,
+    },
+    {
+        path: ROUTE_PATH.RECORDINGS,
+        component: RecordingsScreen,
+    },
+    {
+        path: ROUTE_PATH.AI_CHAT,
+        component: AIChatScreen,
+    },
+    {
+        path: ROUTE_PATH.PERSONS,
+        component: PersonsScreen,
+    },
+    {
+        path: ROUTE_PATH.VOICEMIND_SETTINGS,
+        component: SettingsScreen,
     },
 ];
 
